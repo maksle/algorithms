@@ -2,9 +2,9 @@
 
 import random
 
-def randomized_select(a, n, i):
+def randomized_select(a, i, n=None):
     """
-    input: Array a, length n, order statistic i
+    input: Array a, order statistic i, length n
     output: value of ith smallest element
 
     Average case running time O(n) over random pivot choices. This is amazing
@@ -44,6 +44,8 @@ def randomized_select(a, n, i):
         a[left], a[i-1] = a[i-1], a[left]
         return i-1
 
+    n = n or len(a)
+
     if n == 1:
         return a[i-1]
 
@@ -58,4 +60,4 @@ def randomized_select(a, n, i):
         return randomized_select(a[j:], n-j, i-j)
 
 if __name__ == "__main__":
-    print randomized_select([1,2,3,4], 4, 4)
+    print randomized_select([1,2,3,4], 4)
