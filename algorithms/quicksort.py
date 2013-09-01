@@ -9,7 +9,11 @@ def quicksort(a, left=0, right=None):
     """
 
     def partition(a, left, right):
-
+        """
+        Subroutine that does the brunt of the work.
+        Outputs partitioned list around pivot p: [ <p | p | >p ]
+        The <p and >p partitions may or may not be sorted.
+        """
         # random pivot ensures average runtime O(nlogn)
         def choosePivot():
             return random.choice(range(left, right+1))
