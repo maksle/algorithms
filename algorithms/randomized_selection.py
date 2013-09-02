@@ -55,9 +55,9 @@ def randomized_select(a, i, n=None):
     if j == i:
         return a[j-1]
     elif j > i:
-        return randomized_select(a[:j-1], j-1, i)
+        return randomized_select(a[:j-1], i, j-1)
     else: # j < i
-        return randomized_select(a[j:], n-j, i-j)
+        return randomized_select(a[j:], i-j, n-j)
 
 if __name__ == "__main__":
-    print randomized_select([1,2,3,4], 4)
+    print randomized_select([4,3,2,1], 3)
