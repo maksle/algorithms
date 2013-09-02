@@ -60,4 +60,4 @@ def randomized_select(a, i, n=None):
         return randomized_select(a[j:], i-j, n-j)
 
 if __name__ == "__main__":
-    print randomized_select([4,3,2,1], 3)
+    print randomized_select([4,2,1,4,5,7], 3)
