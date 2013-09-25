@@ -33,7 +33,6 @@ def dfs(g, v, p):
     """
     global t
     explored.append(v)
-    print v
     if p == 2:
         leader[v] = source # only relevant in 2nd pass
     for i in graph[v][p-1]:
