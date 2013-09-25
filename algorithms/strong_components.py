@@ -34,7 +34,7 @@ def dfs(g, v, p):
     global t
     explored.append(v)
     if p == 2:
-        leader[v] = source # only relevant in 2nd pass
+        leader[v] = source
     for i in graph[v][p-1]:
         if i not in explored:
             dfs(g, i, p)
