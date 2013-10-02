@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-# Kosaraju's algorithm to find strongly connected components
+# Kosaraju's algorithm to find strongly connected components (SCCs)
+# 1. reverse G edges... G(V,E) => G'(V,E')
+# 2. DFS on G' to determine source ordering
+# 3. DFS on G using step 2's ordering produces SCCs
 
 # graph = {vertex: (inbound edges, outbound edges)} (could have used a list to
 # be consistent)
@@ -27,6 +30,7 @@ order = [None for i in range(0,9)]
 
 def dfs(g, v, p):
     """
+    Modified Depth First Search
     g -> graph
     v -> vertex to expand
     p -> pass number (must be 1 or 2)
